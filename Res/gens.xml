@@ -1,0 +1,142 @@
+<gens name="DSA Namen">
+    <generator name="Amazonen">
+        <pattern weight="1">{amazonen_vor_w}</pattern>
+    </generator>
+    <category name="Bornland">
+        <generator name = "Bornland Männlich">
+            <pattern weight="1">{bornland_vor_m} {bornland_nach}</pattern>
+        </generator>
+        <generator name = "Bornland Weiblich">
+            <pattern weight="1">{bornland_vor_w} {bornland_nach}</pattern>
+        </generator>
+    </category>
+    <category name ="Elfen">
+        <generator name="Elfen Männlich">
+            <pattern weight="1">{elfen_vor_m} {elfen_nach}</pattern>
+        </generator>
+        <generator name="Elfen Weiblich">
+            <pattern weight="1">{elfen_vor_w} {elfen_nach}</pattern>
+        </generator>
+    </category>
+
+    <category name = "Horasreich">
+        <category name = "Einfache">
+            <generator name="Horasreich Einfache Männlich">
+                <pattern weight="3">{horasreich_vor_m} {horasreich_nach}</pattern>
+                <pattern weight="1">{horasreich_vor_m} {horasreich_mittel} {horasreich_nach}</pattern>
+            </generator>
+            <generator name="Horasreich Einfache Weiblich">
+                <pattern weight="3">{horasreich_vor_w} {horasreich_nach}</pattern>
+                <pattern weight="1">{horasreich_vor_w} {horasreich_mittel} {horasreich_nach}</pattern>
+            </generator>
+        </category>
+        <category name="Wichtige">
+            <filterlist name="Horasreich Wichtige Männlich" source="Horasreich Einfache Männlich">
+                <filter>Familie:Wichtig</filter>
+            </filterlist>
+            <filterlist name="Horasreich Wichtige Weiblich" source="Horasreich Einfache Weiblich">
+                <filter>Familie:Wichtig</filter>
+            </filterlist>
+        </category>
+        <category name = "Zyklopäer">
+            <generator name ="Zyklopäer Männlich">
+                <pattern weight="1">{horasreich_vor_m} {horasreich_nach}os</pattern>
+                <pattern weight="3">{$Horasreich Einfache Männlich}</pattern>
+            </generator>
+            <generator name ="Zyklopäer Weiblich">
+                <pattern weight="1">{horasreich_vor_w} {horasreich_nach}os</pattern>
+                <pattern weight="3">{$Horasreich Einfache Weiblich}</pattern>
+            </generator>
+        </category>
+    </category>
+
+    <category name="Mittelreich">
+        <category name="Albernia">
+            <generator name="Albernia Männlich">
+                <pattern weight="5">{albernia_vor_m} {garetien_nach}</pattern>
+                <pattern weight="1">{albernia_vor_m}-{garetien_vor_m} {garetien_nach}</pattern>
+            </generator>
+            <generator name="Albernia Weiblich">
+                <pattern weight="5">{albernia_vor_w} {garetien_nach}</pattern>
+                <pattern weight="1">{albernia_vor_w}-{albernia_vor_w} {garetien_nach}</pattern>
+            </generator>
+        </category>
+        <category name="Darpatien">
+            <generator name = "Darpatien Männlich">
+                <pattern weight = "4">{darpatien_vor_m} {darpatien_nach_pre}{darpatien_nach_post}</pattern>
+                <pattern weight = "1">{darpatien_vor_m} {garetien_nach}</pattern>
+            </generator>
+            <generator name = "Darpatien Weiblich">
+                <pattern weight = "4">{darpatien_vor_w} {darpatien_nach_pre}{darpatien_nach_post}</pattern>
+                <pattern weight = "1">{darpatien_vor_w} {garetien_nach}</pattern>
+            </generator>
+        </category>
+        <category name="Garetien">
+            <generator name="Garetien Männlich">
+                <pattern weight = "5">{garetien_vor_m} {garetien_nach}</pattern>
+                <pattern weight = "1">{garetien_vor_m}-{garetien_vor_m} {garetien_nach}</pattern>
+            </generator>
+            <generator name="Garetien Weiblich">
+                <pattern weight = "5">{garetien_vor_w} {garetien_nach}</pattern>
+                <pattern weight = "1">{garetien_vor_w}-{garetien_vor_w} {garetien_nach}</pattern>
+            </generator>
+        </category>
+        <category name="Weiden">
+            <generator name = "Weiden Männlich">
+                <pattern weight = "4">{weiden_vor_m} {weiden_nach_pre}{weiden_nach_post}</pattern>
+                <pattern weight = "1">{weiden_vor_m} {garetien_nach}</pattern>
+            </generator>
+            <generator name = "Weiden Weiblich">
+                <pattern weight = "4">{weiden_vor_w} {weiden_nach_pre}{weiden_nach_post}</pattern>
+                <pattern weight = "1">{weiden_vor_w} {garetien_nach}</pattern>
+            </generator>
+        </category>
+    </category>
+    <category name ="Mohas">
+        <generator name="Mohas Männlich">
+            <pattern weight="1">{moha_vor_m}</pattern>
+        </generator>
+        <generator name="Mohas Weiblich">
+            <pattern weight="1">{moha_vor_w}</pattern>
+        </generator>
+    </category>
+    <category name="Nivesen">
+        <generator name="Nivesen Männlich">
+            <pattern weight="6">{nivesen_vor_m}</pattern>
+            <pattern weight="1">{nivesen_vor_m} aus {nivesen_vor_m}s Stamm</pattern>
+            <pattern weight="1">{nivesen_vor_m} aus {nivesen_vor_w}s Stamm</pattern>
+        </generator>
+        <generator name="Nivesen Weiblich">
+            <pattern weight="6">{nivesen_vor_w}</pattern>
+            <pattern weight="1">{nivesen_vor_w} aus {nivesen_vor_m}s Stamm</pattern>
+            <pattern weight="1">{nivesen_vor_w} aus {nivesen_vor_w}s Stamm</pattern>
+        </generator>
+    </category>
+    <category name="Norbarden">
+        <generator name="Norbarden Männlich">
+            <pattern weight="1">{norbarden_vor_m} {norbarden_nach}</pattern>
+        </generator>
+        <generator name="Norbarden Weiblich">
+            <pattern weight="1">{norbarden_vor_w} {norbarden_nach}</pattern>
+        </generator>
+    </category>
+    <category name="Thorwal">
+        <generator name="Thorwal Männlich">
+            <pattern weight="1">{thorwal_vor_m} {thorwal_vor_m}son</pattern>
+        </generator>
+        <generator name="Thorwal Weiblich">
+            <pattern weight="5">{thorwal_vor_w} {thorwal_vor_w}dotter</pattern>
+            <pattern weight="11">{thorwal_vor_w} {thorwal_vor_w}dottir</pattern>
+        </generator>
+    </category>
+    <category name="Tulamiden">
+        <generator name="Tulamiden Männlich">
+            <pattern weight = "3">{tulamiden_vor_m} ibn {tulamiden_vor_m}</pattern>
+            <pattern weight = "2">{tulamiden_vor_m} ben {tulamiden_vor_m}</pattern>
+        </generator>
+        <generator name="Tulamiden Weiblich">
+            <pattern weight = "3">{tulamiden_vor_w} sunya {tulamiden_vor_w}</pattern>
+            <pattern weight = "2">{tulamiden_vor_w} {tulamiden_vor_w}sunya</pattern>
+        </generator>
+    </category>
+</gens>
