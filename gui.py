@@ -25,7 +25,9 @@ class Application(Frame):
         currentselected = self.tree.selection()[0]
         fun = self.functions[currentselected]
         for i in range(self.generations):
-            s.append(fun()[0])
+            t = fun()
+            s.append(t[0])
+            s.append(str(t[1]))
         r = "\n".join(s)
         self.textbar.delete(1.0, END)
         self.textbar.insert(END, r)

@@ -128,7 +128,10 @@ def filterbuilder(source, filters, ident) -> ():
             for k in fmap.keys():
                 if k in candidate[1].keys():
                     if fmap[k] != candidate[1][k] and fmap[k] != "":
+                        print("FALSE")
                         possible = False
+                else:
+                    possible = False
             if possible:
                 return candidate
             else:
