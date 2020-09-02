@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/DSANamenGenerator.iml" filepath="$PROJECT_DIR$/.idea/DSANamenGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DSANamensGenerator/.idea/DSANamenGenerator.iml" filepath="$PROJECT_DIR$/../DSANamensGenerator/.idea/DSANamenGenerator.iml" />
     </modules>
   </component>
 </project>
