@@ -10,6 +10,8 @@ class Application(Frame):
     ftree = None
     textbar = None
     lastselected = None
+    opennodes = []
+    
 
     def __init__(self, t, g, master=None):
         super().__init__(master)
@@ -33,8 +35,11 @@ class Application(Frame):
         self.textbar.insert(END, r)
         self.tree.item(currentselected, open=TRUE)
         col = self.tree.identify_column(e.x)
-        if col == 0:
+        if currentselected in self.opennodes:
             self.tree.item(currentselected, open=FALSE)
+            self.opennodes.remove(currentselected)
+        else:
+            self.opennodes.append(currentselected)
         self.lastselected = currentselected
 
     def create_widgets(self):
