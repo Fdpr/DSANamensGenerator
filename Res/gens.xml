@@ -52,7 +52,7 @@
 
     <category name="Mittelreich">
         <category name="Albernia">
-            <generator name="Albernia Männlich">
+            <generator name="Albernia Männlich" desc="d-Mensch">
                 <pattern weight="5">{albernia_vor_m} {garetien_nach}</pattern>
                 <pattern weight="1">{albernia_vor_m}-{garetien_vor_m} {garetien_nach}</pattern>
             </generator>
@@ -137,6 +137,11 @@
         <generator name="Tulamiden Weiblich">
             <pattern weight = "3">{tulamiden_vor_w} sunya {tulamiden_vor_w}</pattern>
             <pattern weight = "2">{tulamiden_vor_w} {tulamiden_vor_w}sunya</pattern>
+        </generator>
+    </category>
+    <category name="Deskriptoren">
+        <generator name="d-Mensch">
+            <pattern weight="1">{mensch_persoenlichkeit}</pattern>
         </generator>
     </category>
 </gens>

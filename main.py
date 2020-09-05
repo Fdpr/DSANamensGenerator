@@ -97,7 +97,10 @@ def parsegenerator(e) -> dict:
         if n.tag == "pattern":
             patterns.append(n.text)
             weights.append(n.attrib['weight'])
-    f = genbuilder(patterns, weights, ident)
+    if 'desc' in e.attrib.keys():
+        f = genbuilder(patterns, weights, ident, e.attrib['desc'])
+    else:
+        f = genbuilder(patterns, weights, ident)
     d = {"name": ident, "function": f, "children": None}
     return d
 
@@ -162,7 +165,7 @@ def catbuilder(children, ident) -> ():
     return built
 
 
-def genbuilder(patterns, weights, ident) -> ():
+def genbuilder(patterns, weights, ident, desc=None) -> ():
     """
     :param patterns: ordered list of patterns from which names are generated
     :type patterns: list[str]
@@ -170,6 +173,8 @@ def genbuilder(patterns, weights, ident) -> ():
     :type weights: list[int]
     :param ident: namestring. Generator can be referenced from outer scope by this identifier.
     :type ident: str
+    :param desc: Optional name of descriptor function.
+    :type desc: str
     :return: A function that generates names according to the weighted patterns.
     Builds a generator function, that is: a function which generates a random name based on a given number
     of weighted patterns.
@@ -182,7 +187,12 @@ def genbuilder(patterns, weights, ident) -> ():
         weightsint.append(int(w))
 
     def built() -> (str, dict):
-        return random.choices(funs, weights=weightsint)[0]()
+        res = list(random.choices(funs, weights=weightsint)[0]())
+        if desc is not None:
+            extra = functions[desc]()
+            res[1].update(extra[1])
+            res.append(extra[0])
+        return res
 
     functions[ident] = built
     return built

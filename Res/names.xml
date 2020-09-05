@@ -1,4 +1,5 @@
 <names>
+	<!-- Menschen Namen -->
     <list name="albernia_vor_m" Geschlecht="Männlich">
 		<e>Aedin</e>
 		<e>Aelfwin</e>
@@ -2661,5 +2662,12 @@
 		<e>Still-wie-die-Ufernweide (a'lu'ya'vaydha)</e>
 		<e>Tannensang (diayga'feysala)</e>
 		<e>Wo-Regenbogen-sprießen</e>
+	</list>
+	<!-- Deskriptoren -->
+	<list name="mensch_persoenlichkeit">
+		<e Hotel="Trivago">dumm</e>
+		<e>hässlich</e>
+		<e>wütend</e>
+		<e>cool</e>
 	</list>
 </names>
