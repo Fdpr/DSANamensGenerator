@@ -5,7 +5,7 @@ from tkinter import ttk
 
 class Application(Frame):
 
-    generations = 25
+    generations = 250
     functions = None
     tree = None
     ftree = None
@@ -60,6 +60,8 @@ class Application(Frame):
         children.remove(currentselected)
         for child in children:
             self.tree.item(child, open=FALSE)
+        for currentchild in list(self.tree.get_children(currentselected)):
+            self.tree.item(currentchild, open=FALSE)
         # children = tree.get_children()
 
     def create_widgets(self):
